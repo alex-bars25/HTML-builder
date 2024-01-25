@@ -8,5 +8,5 @@ stdin.on('data', (chunk) => {
   if (chunk.toString().trim() === 'exit') exit();
   file.write(chunk);
 });
-process.on('SIGINT', exit);
+process.on('SIGINT', () => exit());
 process.on('exit', () => stdout.write('Bye! Have a beautiful day!'));
